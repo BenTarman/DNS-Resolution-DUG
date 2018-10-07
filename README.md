@@ -50,6 +50,8 @@ and daemon modes.
 
 To enable cache, use the "-c" flag.
 
+When we use the cache, the output is in magenta and no debugging is shown (since basically no code is ran).
+
 typing "make clean" will "erase" the cache as well.
 
 
@@ -58,5 +60,8 @@ typing "make clean" will "erase" the cache as well.
 By default the program outputs similarish to the OG dig. To disable this
 for maybe easier grading type "-s" flag (for shorten).
 
+
+
+**EXAMPLE RUNS**
 
 
