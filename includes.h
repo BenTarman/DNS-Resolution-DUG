@@ -23,6 +23,7 @@
 #define KYEL   "\x1b[33m"
 #define KGREEN "\x1b[32m"
 #define KBLUE  "\x1b[34m"
+#define KMAG   "\x1B[35m"
 #define KRESET "\x1b[0m"
 
 

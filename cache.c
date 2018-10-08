@@ -41,11 +41,12 @@ int cache(unsigned char* hostname, char* dns_server, char* query_type)
 	if (cnt == 1)
 		return 0;
 
+	printf(KMAG);
 	for (int i = 0; i < cnt; i++)
 	{
 		cacheprint("%s", cache_str[i]);
 	}
-		//printf(KGREEN "%s" KRESET, cache_str[cnt - 2]);
+	printf(KRESET);
 
 	return 1;
 }

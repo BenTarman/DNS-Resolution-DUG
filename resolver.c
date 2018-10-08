@@ -153,8 +153,6 @@ uint8_t* query_dns_server(unsigned char *host, char* name_server,
     dns_header->rd = 0; //dun do recursion (we coded it)
     dns_header->ra = 0; 
     dns_header->z = 0;
-    dns_header->ad = 0;
-    dns_header->cd = 0;
     dns_header->rcode = 0;
     dns_header->q_count = ntohs(1); //we have only 1 question
     dns_header->ans_count = 0;
