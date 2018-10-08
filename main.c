@@ -48,6 +48,8 @@ int main(int argc, char * const argv[])
 			printf("-t \t set the type of record you want to query\n");
 			printf("-d \t debug mode which prints verbose output of program flow\n");
 			printf("-s \t 'shrinks' the output to just show answer (like handout)\n");
+			printf("-f \t 'starts a daemon server (only runs for 1 query)\n");
+			printf("-c \t 'says we want to use the cache (both insert/retreive)\n");
 			printf("-h\t display help menu\n\n");
 
 		exit(0);
