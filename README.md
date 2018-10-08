@@ -61,7 +61,99 @@ By default the program outputs similarish to the OG dig. To disable this
 for maybe easier grading type "-s" flag (for shorten).
 
 
+<h2> Example Runs </h2>
 
-**EXAMPLE RUNS**
+<h1> standard run (defaults to A type) </h1>
+
+$ > ./dug imagine.mines.edu 138.67.1.2
+
+querying imagine.mines.edu....
+
+
+Query Processed!
+================
+QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
+
+
+;;  ANSWER SECTION:
+imagine.mines.edu	CNAME	pvm-jumpbox.mines.edu
+pvm-jumpbox.mines.edu	A	138.67.208.118
+;;  AUTHORITY SECTION:
+;;  ADDITIONAL SECTION:
+Authoritative answer: 138.67.208.118
+
+<br><br>
+
+<h1> MX type query ("shortened" answer) </h1>
+
+$ > ./dug -s -t MX imagine.mines.edu 138.67.1.2
+
+querying imagine.mines.edu....
+<br><br>
+
+
+
+Non-authoritative answer: pvm-jumpbox.mines.edu
+
+
+<h1> Cache query (CNAME) </h1>
+
+
+$ > ./dug -s -c -t MX cse.unl.edu 138.67.1.2
+
+querying cse.unl.edu....
+
+
+
+
+Non-authoritative answer: 10 cse-barracuda.unl.edu
+
+
+<h1> cache hit (with daemon server!) </h1>
+
+$ > ./dug -c -f 138.67.1.2
+
+Using port 3626
+
+(open other terminal)
+
+$ > dig -p 3626 cse.unl.edu @127.0.0.1 MX
+
+Query Cached!
+
+
+================
+
+QUERY: 1, ANSWER: 1, AUTHORITY: 2, ADDITIONAL: 5
+
+;;  ANSWER SECTION:
+
+cse.unl.edu	MX	10 cse-barracuda.unl.edu
+
+;;  AUTHORITY SECTION:
+
+dns1.unl.edu
+
+unl.edu	NS	dns1.unl.edu
+
+dns2.unl.edu
+
+unl.edu	NS	dns2.unl.edu
+
+;;  ADDITIONAL SECTION:
+
+cse-barracuda.unl.edu	A	129.93.164.185
+
+dns1.unl.edu	A	129.93.168.59
+
+dns2.unl.edu	A	129.93.168.60
+
+record type unrecognized or corrupted
+
+record type unrecognized or corrupted
+
+Non-authoritative answer: 10 cse-barracuda.unl.edu
+
+
 
 
