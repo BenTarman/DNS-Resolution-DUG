@@ -71,18 +71,27 @@ querying imagine.mines.edu....
 
 
 Query Processed!
+
+
 ================
+
 QUERY: 1, ANSWER: 2, AUTHORITY: 0, ADDITIONAL: 0
 
 
+
 ;;  ANSWER SECTION:
+
 imagine.mines.edu	CNAME	pvm-jumpbox.mines.edu
+
 pvm-jumpbox.mines.edu	A	138.67.208.118
+
 ;;  AUTHORITY SECTION:
+
 ;;  ADDITIONAL SECTION:
+
 Authoritative answer: 138.67.208.118
 
-<br><br>
+
 
 <h1> MX type query ("shortened" answer) </h1>
 
