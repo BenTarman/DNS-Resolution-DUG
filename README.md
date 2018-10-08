@@ -2,7 +2,7 @@ Benjamin Jacob Tarman - DUG
 
 **COMPILE**
 
-typing make will give binary called dug
+typing make will give binary called dug. Compiler is c99.
 
 dug has many flag options but typing "./dug -h" will bring up a help menu
 
