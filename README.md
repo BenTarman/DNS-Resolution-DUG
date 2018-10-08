@@ -4,13 +4,13 @@ Benjamin Jacob Tarman - DUG
 
 typing make will give binary called dug
 
-
 dug has many flag options but typing "./dug -h" will bring up a help menu
 
 in general, you type "./dug <FLAGS> <hostname> <nameserver>"
 
 all the examples on the handout can be typed verbatim, but I have extra
 flags for "cacheing" and for "diglike" output.
+
 
 **supported queries**
 

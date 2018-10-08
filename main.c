@@ -77,7 +77,7 @@ int main(int argc, char * const argv[])
 
 	if (cacheResults)
 	{
-	int isCached = cache((unsigned char*)hostname, dns_server);
+	int isCached = cache((unsigned char*)hostname, dns_server, type_str);
 
 	if (isCached)
 		return 0;
@@ -90,7 +90,7 @@ int main(int argc, char * const argv[])
 			exit(-1);
 		}
 
-		fprintf(fp, "* %s %s\n", hostname, dns_server);
+		fprintf(fp, "* %s %s %s\n", hostname, dns_server, type_str);
 		fclose(fp);
 	}
 		run_program((unsigned char*)hostname, type_str, dns_server);

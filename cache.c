@@ -1,10 +1,10 @@
 #include "cache.h"
 #include "includes.h"
 
-int cache(unsigned char* hostname, char* dns_server)
+int cache(unsigned char* hostname, char* dns_server, char* query_type)
 {
 		char* cache_result = (char*)malloc(strlen(hostname) + strlen(dns_server) + 40);
-		sprintf(cache_result, "* %s %s\n", hostname, dns_server);
+		sprintf(cache_result, "* %s %s %s\n", hostname, dns_server, query_type);
 
 		char input[512];
 		FILE *fp;

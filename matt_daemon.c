@@ -64,11 +64,14 @@ void process_matt_daemon(char* dns_server, uint8_t* ans_buf)
 
 	char* hostname = get_name(read_ptr, ans_buf, &stop);
 	read_ptr += stop;
+	
+	int query_type_pos = sizeof(DNS_HEADER) + stop + 1;
+	char* type_str = record_type_map[ans_buf[query_type_pos]];
 
 	// Before going on check if we want to use a cache
 	if (cacheResults)
 	{
-		int isCached = cache(hostname, dns_server);
+		int isCached = cache(hostname, dns_server, type_str);
 		if (isCached)
 			exit(0);
 
@@ -80,17 +83,10 @@ void process_matt_daemon(char* dns_server, uint8_t* ans_buf)
 			exit(-1);
 		}
 
-		fprintf(fp, "* %s %s\n", hostname, dns_server);
+		fprintf(fp, "* %s %s %s\n", hostname, dns_server, type_str);
 		fclose(fp);
 	}
 		
-
-	char dummy_qname[50];
-	formatToDNS(dummy_qname, hostname);
-	size_t query_size = strlen((char*)dummy_qname) + 1;
-
-	int query_type_pos = sizeof(DNS_HEADER) + stop + 1;
-	char* type_str = record_type_map[ans_buf[query_type_pos]];
 
 
 	printf("%s\n", type_str);
